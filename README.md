@@ -1,2 +1,2 @@
-# CapstoneRepository
-tbd official title name
+# BugTrapper
+A webapp vulnerability scanner and documentation generator.
