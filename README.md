@@ -1,2 +1,2 @@
-# BugTrapper
-A webapp vulnerability scanner and documentation generator.
+# DLP-Prototype
+This is a Data Loss Prevention Prototype. The purpose of it is to prevent potential threats from being able to access the files upon a machine that this application is running on. It will be able to, at minimum, sandbox physical connections to the machine and alert the administrator whom is dedicated to the machine. This includes USBs, external storages, cables, etc. They will need to be approved by the admin and/or via filters we will establish later on.
