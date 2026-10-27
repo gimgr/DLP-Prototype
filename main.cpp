@@ -3,9 +3,12 @@ This file is more of a proof of concept that we have an understanding of what is
 
 #include <QStorageInfo> 
 #include <iostream>
+#include <QDebug>
 
-using namespace Core;
+using namespace std;
 
+//FIXME: Use info in main() to make this a functional drive detctor
+/*
 void drive_detection()
 {
     foreach (const auto QStorageInfo &storage, QStorageInfo::mountedVolumes())
@@ -37,12 +40,22 @@ void drive_detection()
         }
     }
 }
+*/
 
 int main()
 {
-    cout << "-----Data Loss Prevention Prototype-----\n";
-    drive_detection();
-    cout << "-----------------ver 0.1----------------\n";
+    //FIXME: Check for new/all connected drives rather than being stuck at root only.
+    QStorageInfo storage = QStorageInfo::root();
+    qDebug() << storage.rootPath();
+
+    if (storage.isValid() && storage.isReady() && storage.isRoot())
+    {
+        cout << "\"Root good!\"\n";
+        qDebug() << storage.fileSystemType();
+    }
+
+    //FIXME: Check for each drive once and only output newly connected drives
+    system("./DLP-Prototype");
 
     return 0;
 }
